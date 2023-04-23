@@ -43,11 +43,6 @@ Executar o comando para inicializar o MongoDB, RabbitMQ e a aplicação na porta
    ```
 
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
@@ -61,5 +56,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Docker-badge]: https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white
 [Docker-url]: https://www.docker.com/
 [VSCode-badge]: https://img.shields.io/badge/VS_Code-007ACC?style=flat&logo=visual-studio-code&logoColor=white
-
 [VSCode-url]: https://code.visualstudio.com/
