@@ -9,6 +9,8 @@ API para cadastro de ações e moedas para processamento
 
 API com dois endpoints para cadastro de stocks e moedas em collections no MongoDB e envio de mensagens para uma exchange com DLQ e routingkeys diferentes 
 
+![img](https://user-images.githubusercontent.com/21323326/233877399-487d793c-76b4-445b-88fd-111c94145c26.png)
+
 ### Utilizando
 
 * [![Go][Go-badge]][Go-url]
