@@ -12,13 +12,13 @@ import (
 	"time"
 )
 
-// SaveStock          godoc
-// @Summary 		  Salva stock para processamento
-// @Description 	  Salva a stock no MongoDB e envia para a fila de processamento
-// @Tags              tags
-// @Success 		  200 {object} NomeDoObjetoDeRetorno
-// @Failure 		  400 {object} Erro
-// @Router			  /tags [post]
+// @Description Essa API salva stock para processamento
+// @Tags SomeTag
+// @Accept json
+// @Produce json
+// @Param user body models.Stock true "User data"
+// @Success 200 {object} models.Stock
+// @Router /stock [post]
 func SaveStock(w http.ResponseWriter, r *http.Request) {
 
 	request, erro := ioutil.ReadAll(r.Body)
@@ -53,13 +53,13 @@ func SaveStock(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(fmt.Sprintf("Stock inserida: %s", str)))
 }
 
-// SaveStock          godoc
-// @Summary 		  Salva moeda para processamento
-// @Description 	  Salva a moeda no MongoDB e envia para a fila de processamento
-// @Tags              tags
-// @Success 		  200 {object} NomeDoObjetoDeRetorno
-// @Failure 		  400 {object} Erro
-// @Router			  /tags [post]
+// @Description Essa API salva moedas para processamento
+// @Tags SomeTag
+// @Accept json
+// @Produce json
+// @Param user body models.Fiat true "User data"
+// @Success 200 {object} models.Fiat
+// @Router /fiat [post]
 func SaveFiat(w http.ResponseWriter, r *http.Request) {
 
 	request, erro := ioutil.ReadAll(r.Body)

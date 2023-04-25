@@ -14,7 +14,7 @@ import (
 func Generate() *mux.Router {
 	r := mux.NewRouter()
 
-	r.PathPrefix("/swagger").Handler(httpSwagger.WrapHandler)
+	r.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
 
 	return route.Configuration(r)
 }

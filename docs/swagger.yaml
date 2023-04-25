@@ -1,4 +1,78 @@
+basePath: /api/v1
+definitions:
+  models.Fiat:
+    properties:
+      code:
+        type: string
+      codein:
+        type: string
+      date:
+        type: string
+    type: object
+  models.Stock:
+    properties:
+      date:
+        type: string
+      market:
+        type: integer
+      stock:
+        type: string
+    type: object
+host: localhost:5000
 info:
-  contact: {}
-paths: {}
+  contact:
+    email: felipe.fca1987@gmail.com
+    name: Felipe Fernandes
+  description: API para processamento de comandos de moedas e stocks
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+  title: Command API
+  version: "1.0"
+paths:
+  /fiat:
+    post:
+      consumes:
+      - application/json
+      description: Essa API salva moedas para processamento
+      parameters:
+      - description: User data
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.Fiat'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Fiat'
+      tags:
+      - SomeTag
+  /stock:
+    post:
+      consumes:
+      - application/json
+      description: Essa API salva stock para processamento
+      parameters:
+      - description: User data
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.Stock'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Stock'
+      tags:
+      - SomeTag
+schemes:
+- http
+- https
 swagger: "2.0"

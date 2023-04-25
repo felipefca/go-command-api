@@ -1,7 +1,120 @@
 {
+    "schemes": [
+        "http",
+        "https"
+    ],
     "swagger": "2.0",
     "info": {
-        "contact": {}
+        "description": "API para processamento de comandos de moedas e stocks",
+        "title": "Command API",
+        "contact": {
+            "name": "Felipe Fernandes",
+            "email": "felipe.fca1987@gmail.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        },
+        "version": "1.0"
     },
-    "paths": {}
+    "host": "localhost:5000",
+    "basePath": "/api/v1",
+    "paths": {
+        "/fiat": {
+            "post": {
+                "description": "Essa API salva moedas para processamento",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "SomeTag"
+                ],
+                "parameters": [
+                    {
+                        "description": "User data",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Fiat"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Fiat"
+                        }
+                    }
+                }
+            }
+        },
+        "/stock": {
+            "post": {
+                "description": "Essa API salva stock para processamento",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "SomeTag"
+                ],
+                "parameters": [
+                    {
+                        "description": "User data",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Stock"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Stock"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Fiat": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "codein": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Stock": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string"
+                },
+                "market": {
+                    "type": "integer"
+                },
+                "stock": {
+                    "type": "string"
+                }
+            }
+        }
+    }
 }
